@@ -1,0 +1,40 @@
+Imports System.Data.OleDb
+
+Public Class RegistrationForm
+    ' Adjust the connection string to match your Access database file path
+    Dim connString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Your\Database\Path\YourDatabase.accdb;"
+    Dim conn As New OleDbConnection(connString)
+
+    Private Sub btnRegister_Click(sender As Object, e As EventArgs) Handles btnRegister.Click
+        ' Retrieve username and password from text boxes
+        Dim username As String = txtUsername.Text.Trim()
+        Dim password As String = txtPassword.Text.Trim()
+
+        ' Check if username or password is empty
+        If username = "" Or password = "" Then
+            MessageBox.Show("Please enter both username and password.")
+            Return
+        End If
+
+        Try
+            conn.Open()
+            ' Adjust the query to match your table name and column names
+            Dim query As String = "INSERT INTO Users (Username, Password) VALUES (@Username, @Password)"
+            Dim cmd As New OleDbCommand(query, conn)
+            cmd.Parameters.AddWithValue("@Username", username)
+            cmd.Parameters.AddWithValue("@Password", password)
+            Dim rowsAffected As Integer = cmd.ExecuteNonQuery()
+
+            ' Check if registration was successful
+            If rowsAffected > 0 Then
+                MessageBox.Show("Registration successful!")
+            Else
+                MessageBox.Show("Registration failed!")
+            End If
+
+            conn.Close()
+        Catch ex As Exception
+            MessageBox.Show("Error registering user: " & ex.Message)
+        End Try
+    End Sub
+End Class

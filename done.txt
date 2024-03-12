@@ -1,0 +1,79 @@
+Public Class Form1
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub hours_worked_TextChanged(sender As Object, e As EventArgs) Handles hours_worked.TextChanged
+
+    End Sub
+
+    Private Sub pay_rate_TextChanged(sender As Object, e As EventArgs) Handles pay_rate.TextChanged
+
+    End Sub
+
+    Private Sub retirement_CheckedChanged(sender As Object, e As EventArgs) Handles retirement.CheckedChanged
+
+    End Sub
+
+    Private Sub standard_plan_CheckedChanged(sender As Object, e As EventArgs) Handles standard_plan.CheckedChanged
+
+    End Sub
+
+    Private Sub A_plan_CheckedChanged(sender As Object, e As EventArgs) Handles A_plan.CheckedChanged
+
+    End Sub
+
+    Private Sub medical_insuarance_CheckedChanged(sender As Object, e As EventArgs) Handles medical_insuarance.CheckedChanged
+
+    End Sub
+
+    Private Sub life_insuarance_CheckedChanged(sender As Object, e As EventArgs) Handles life_insuarance.CheckedChanged
+
+    End Sub
+
+    Private Sub Dental_insuarance_CheckedChanged(sender As Object, e As EventArgs) Handles Dental_insuarance.CheckedChanged
+
+    End Sub
+
+    Private Sub payroll_outbox_TextChanged(sender As Object, e As EventArgs) Handles payroll_outbox.TextChanged
+
+    End Sub
+
+    Private Sub payroll_button_Click(sender As Object, e As EventArgs) Handles payroll_button.Click
+        ' Calculate gross pay
+        Dim hours As Double = 10
+        If Double.TryParse(hours_worked.Text, hours) Then
+            Dim payRate As Double = 0
+            If Double.TryParse(pay_rate.Text, payRate) Then
+                Dim grossPay = hours * payRate
+                If hours > 40 Then
+                    grossPay += (hours - 40) * payRate * 1.5
+                End If
+
+                ' Calculate tax
+                Dim tax As Double = 0
+                If grossPay < 98500 Then
+                    tax = grossPay * 0.08
+                ElseIf grossPay < 245000 Then
+                    tax = 98500 * 0.08 + (grossPay - 98500) * 0.18
+                Else
+                    tax = 98500 * 0.08 + 146500 * 0.18 + (grossPay - 245000) * 0.28
+                End If
+
+                ' Calculate net pay
+                Dim netPay = grossPay - tax
+
+                ' Display the results
+                payroll_outbox.Text = "Gross pay: " & grossPay.ToString("C") & Environment.NewLine & "Tax: " & tax.ToString("C") & Environment.NewLine & "Net pay: " & netPay.ToString("C")
+            Else
+                MessageBox.Show("Please enter a valid pay rate.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
+        Else
+            MessageBox.Show("Please enter a valid number of hours worked.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
+    End Sub
+
+    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
+
+    End Sub
+End Class
