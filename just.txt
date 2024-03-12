@@ -1,0 +1,161 @@
+A loop that allows the user to perform multiple calculations
+
+
+
+Imports System
+
+Module Program
+    Sub Main(args As String())
+        Console.WriteLine("Welcome to the Calculator!")
+        Console.WriteLine("Enter two numbers to perform addition, subtraction, multiplication, or division.")
+        Console.WriteLine("Enter 'q' to quit the program.")
+
+        Dim input As String = ""
+        Dim num1, num2 As Double
+        Dim operation As Char
+
+        While input <> "q"
+            Console.Write("Enter the first number: ")
+            input = Console.ReadLine()
+
+            If Double.TryParse(input, num1) Then
+                Console.Write("Enter the operation (+, -, *, /): ")
+                operation = Console.ReadKey().KeyChar
+                Console.WriteLine()
+
+                If operation = "+" OrElse operation = "-" OrElse operation = "*" OrElse operation = "/" Then
+                    Console.Write("Enter the second number: ")
+                    input = Console.ReadLine()
+
+                    If Double.TryParse(input, num2) Then
+                        Dim result As Double
+
+                        Select Case operation
+                            Case "+"
+                                result = num1 + num2
+                            Case "-"
+                                result = num1 - num2
+                            Case "*"
+                                result = num1 * num2
+                            Case "/"
+                                If num2 = 0 Then
+                                    Console.WriteLine("Error: Division by zero is not allowed.")
+                                Else
+                                    result = num1 / num2
+                                End If
+                        End Select
+
+                        Console.WriteLine("The result is " & result)
+                    Else
+                        Console.WriteLine("Error: Invalid input.")
+                    End If
+                Else
+                    Console.WriteLine("Error: Invalid operation.")
+                End If
+            Else
+                Console.WriteLine("Error: Invalid input.")
+            End If
+        End While
+    End Sub
+End Module
+
+
+
+
+
+
+This program prompts the user to enter two numbers, then calculates and displays their sum, difference, product, and quotient. If the user enters non-numeric input, the program displays an error message. If the user enters zero as the second number, the program displays an error message for the quotient calculation.
+
+
+Imports System
+
+Module Program
+    Sub Main(args As String())
+        Console.Write("Enter the first number: ")
+        Dim num1 = Console.ReadLine()
+        Console.Write("Enter the second number: ")
+        Dim num2 = Console.ReadLine()
+
+        Dim num1AsInt As Integer
+        Dim num2AsInt As Integer
+
+        If Integer.TryParse(num1, num1AsInt) AndAlso Integer.TryParse(num2, num2AsInt) Then
+            Dim sum As Integer = num1AsInt + num2AsInt
+            Dim difference As Integer = num1AsInt - num2AsInt
+            Dim product As Integer = num1AsInt * num2AsInt
+            Dim quotient As Double
+
+            If num2AsInt <> 0 Then
+                quotient = num1AsInt / num2AsInt
+            Else
+                Console.WriteLine("Error: Division by zero is not allowed.")
+                Return
+            End If
+
+            Console.WriteLine($"Sum: {sum}")
+            Console.WriteLine($"Difference: {difference}")
+            Console.WriteLine($"Product: {product}")
+            Console.WriteLine($"Quotient: {quotient}")
+        Else
+            Console.WriteLine("Error: Invalid input.")
+        End If
+
+        Console.Write("Press any key to continue...")
+        Console.ReadKey(True)
+    End Sub
+End Module
+
+
+
+
+
+
+This program defines a recursive function called factorial that takes an integer as an argument and returns its factorial
+
+
+
+
+Module myfunctions
+    Function factorial(ByVal num As Integer) As Integer
+        ' local variable declaration */
+        Dim result As Integer
+
+        If (num = 1) Then
+            Return 1
+        Else
+            result = factorial(num - 1) * num
+            Return result
+        End If
+    End Function
+    Sub Main()
+        'calling the factorial method
+        Console.WriteLine("Factorial of 6 is : {0}", factorial(6))
+        Console.WriteLine("Factorial of 7 is : {0}", factorial(7))
+        Console.WriteLine("Factorial of 8 is : {0}", factorial(8))
+        Console.ReadLine()
+    End Sub
+End Module
+
+
+
+This program defines a function called reverseString that takes a string as an argument and returns the reversed string.
+
+
+Module myfunctions
+    Function reverseString(ByVal input As String) As String
+        ' local variable declaration */
+        Dim reversed As String = ""
+
+        For i As Integer = input.Length - 1 To 0 Step -1
+            reversed &= input(i)
+        Next
+
+        Return reversed
+    End Function
+    Sub Main()
+        'calling the reverseString method
+        Console.WriteLine("Original String: Hello World")
+        Console.WriteLine("Reversed String: " & reverseString("Hello World"))
+        Console.ReadLine()
+    End Sub
+End Module

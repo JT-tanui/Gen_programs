@@ -1,0 +1,16 @@
+C:\Users\Student\Desktop\VB University\VB University\bin\Debug\net8.0-windows\VB University.exe
+C:\Users\Student\Desktop\VB University\VB University\bin\Debug\net8.0-windows\VB University.deps.json
+C:\Users\Student\Desktop\VB University\VB University\bin\Debug\net8.0-windows\VB University.runtimeconfig.json
+C:\Users\Student\Desktop\VB University\VB University\bin\Debug\net8.0-windows\VB University.dll
+C:\Users\Student\Desktop\VB University\VB University\bin\Debug\net8.0-windows\VB University.pdb
+C:\Users\Student\Desktop\VB University\VB University\obj\Debug\net8.0-windows\VB_University.Form1.resources
+C:\Users\Student\Desktop\VB University\VB University\obj\Debug\net8.0-windows\VB University.vbproj.GenerateResource.cache
+C:\Users\Student\Desktop\VB University\VB University\obj\Debug\net8.0-windows\VB University.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Student\Desktop\VB University\VB University\obj\Debug\net8.0-windows\VB University.AssemblyInfoInputs.cache
+C:\Users\Student\Desktop\VB University\VB University\obj\Debug\net8.0-windows\VB University.AssemblyInfo.vb
+C:\Users\Student\Desktop\VB University\VB University\obj\Debug\net8.0-windows\VB University.vbproj.CoreCompileInputs.cache
+C:\Users\Student\Desktop\VB University\VB University\obj\Debug\net8.0-windows\VB University.dll
+C:\Users\Student\Desktop\VB University\VB University\obj\Debug\net8.0-windows\refint\VB University.dll
+C:\Users\Student\Desktop\VB University\VB University\obj\Debug\net8.0-windows\VB University.pdb
+C:\Users\Student\Desktop\VB University\VB University\obj\Debug\net8.0-windows\VB University.genruntimeconfig.cache
+C:\Users\Student\Desktop\VB University\VB University\obj\Debug\net8.0-windows\ref\VB University.dll

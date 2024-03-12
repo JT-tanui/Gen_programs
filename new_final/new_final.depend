@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1710146488 source:c:\users\student\desktop\c++\c program\new_final\main.cpp
+	<iostream>
+	<stack>
+	<algorithm>
+	<vector>
+
