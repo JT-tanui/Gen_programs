@@ -1,0 +1,29 @@
+1. HTML (index.html):
+
+    <!DOCTYPE html>: Declares the document type and version of HTML.
+    <html lang="en">: Specifies the language of the document.
+    <head>: Contains metadata like character encoding, viewport settings, and the page title.
+    <meta charset="UTF-8">: Sets the character encoding to UTF-8.
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">: Configures the viewport for responsive design.
+    <title>To-Do List</title>: Sets the title of the page.
+    <link rel="stylesheet" href="styles.css">: Links the external CSS file.
+    <body>: Contains the visible content of the page.
+    <div class="container">: Creates a container for the main content.
+    <h1>To-Do List</h1>: Displays the title of the to-do list.
+    <input type="text" id="taskInput" placeholder="Enter task">: Provides an input field for entering tasks.
+    <button id="addTaskBtn">Add Task</button>: Displays a button for adding tasks.
+    <ul id="taskList">: Defines an unordered list where tasks will be displayed.
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>: Links to the jQuery library.
+    <script src="script.js"></script>: Links to the JavaScript file containing the application logic.
+
+2. CSS (styles.css):
+
+    Defines the styling for various elements of the to-do list application, including fonts, colors, spacing, and layout.
+
+3. JavaScript (script.js):
+
+    $(document).ready(function() {...});: Ensures that the script executes after the document has loaded.
+    function addTask() {...}: Defines a function to add tasks to the list.
+    $(document).on('click', '.removeTaskBtn', function() {...});: Defines an event handler to remove tasks when the remove button is clicked.
+    $('#addTaskBtn').click(function() {...});: Adds an event listener to the "Add Task" button to call the addTask function when clicked.
+    $('#taskInput').keypress(function(e) {...});: Adds an event listener to the task input field to call the addTask function when the Enter key is pressed.
